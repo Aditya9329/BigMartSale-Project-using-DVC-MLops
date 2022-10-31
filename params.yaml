@@ -1,0 +1,21 @@
+base:
+  random_state: 42
+  target_col: Item_Outlet_Sales
+
+data_source:
+  s3_source: data_given/bigmartdata.csv
+
+load_data:
+  raw_data_csv: data/raw/bigmartdata.csv
+
+split_data:
+  train_path: data/processed/train_bigmartdata.csv
+  test_path : data/processed/test_bigmartdata.csv
+  test_size : 0.2
+
+estimators:
+  LinearRegression:
+    params:
+      l1_ratio: 0.9
+
+model_dir: saved_models

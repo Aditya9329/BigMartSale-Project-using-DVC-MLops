@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/mlops/BigMartSaleProj/notebooks/mlruns/0/164ade6bf3db440d8bd024eb8d8277d3/artifacts
+end_time: 1667211803269
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 164ade6bf3db440d8bd024eb8d8277d3
+run_name: serious-ape-841
+run_uuid: 164ade6bf3db440d8bd024eb8d8277d3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667211731894
+status: 3
+tags: []
+user_id: ngc

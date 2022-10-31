@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/mlops/BigMartSaleProj/notebooks/mlruns/0/294470f9b6954b5a9e688e1c61172624/artifacts
+end_time: 1667218637876
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 294470f9b6954b5a9e688e1c61172624
+run_name: sedate-snipe-418
+run_uuid: 294470f9b6954b5a9e688e1c61172624
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667218522370
+status: 3
+tags: []
+user_id: ngc
