@@ -6,7 +6,7 @@ data_source:
   s3_source: data_given/bigmartdata.csv
 
 load_data:
-  raw_data_csv: data/raw/bigmartdata.csv
+  raw_dataset_csv: data/raw/bigmartdata.csv
 
 split_data:
   train_path: data/processed/train_bigmartdata.csv
