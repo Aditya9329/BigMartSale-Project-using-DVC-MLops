@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/bigmartdata.csv
+      md5: e0df0a56f3f03c084c828b29aaa0f314
+      size: 869537
+    - path: src/get_data.py
+      md5: fe1bf65280384cdbbb1e6151fed6f94c
+      size: 717
+    - path: src/load_data.py
+      md5: 96b01866d21cb44c9466632b718d84a1
+      size: 712
+    outs:
+    - path: data/raw/bigmartdata.csv
+      md5: e07bb6e40d126f0d68cdf963d7287876
+      size: 871595

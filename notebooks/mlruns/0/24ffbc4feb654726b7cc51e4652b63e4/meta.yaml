@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/mlops/BigMartSaleProj/notebooks/mlruns/0/24ffbc4feb654726b7cc51e4652b63e4/artifacts
+end_time: 1667282586707
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 24ffbc4feb654726b7cc51e4652b63e4
+run_name: sincere-toad-519
+run_uuid: 24ffbc4feb654726b7cc51e4652b63e4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667282469960
+status: 4
+tags: []
+user_id: ngc

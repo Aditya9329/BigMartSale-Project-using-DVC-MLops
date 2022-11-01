@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/mlops/BigMartSaleProj/notebooks/mlruns/0/eca6dad5d1dc47e595be3a812464cf48/artifacts
+end_time: 1667283705366
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eca6dad5d1dc47e595be3a812464cf48
+run_name: carefree-cow-587
+run_uuid: eca6dad5d1dc47e595be3a812464cf48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667283577866
+status: 3
+tags: []
+user_id: ngc
