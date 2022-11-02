@@ -7,3 +7,13 @@ stages:
     - data_given/bigmartdata.csv
     outs:
     - data/raw/bigmartdata.csv
+
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - src/get_data.py
+    - src/split_data.py
+    - data/raw/bigmartdata.csv
+    outs:
+    - data/processed/train_bigmartdata.csv
+    - data/processed/test_bigmartdata.csv
