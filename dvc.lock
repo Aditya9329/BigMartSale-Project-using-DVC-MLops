@@ -7,8 +7,8 @@ stages:
       md5: e0df0a56f3f03c084c828b29aaa0f314
       size: 869537
     - path: src/get_data.py
-      md5: fe1bf65280384cdbbb1e6151fed6f94c
-      size: 717
+      md5: 676ee8bf1c5e2ea7417ed53a9efef5a7
+      size: 721
     - path: src/load_data.py
       md5: 96b01866d21cb44c9466632b718d84a1
       size: 712
@@ -16,3 +16,16 @@ stages:
     - path: data/raw/bigmartdata.csv
       md5: e07bb6e40d126f0d68cdf963d7287876
       size: 871595
+  preprocessing:
+    cmd: python src/preprocessing.py --config=params.yaml
+    deps:
+    - path: data/raw/bigmartdata.csv
+      md5: e07bb6e40d126f0d68cdf963d7287876
+      size: 871595
+    - path: src/get_data.py
+      md5: 676ee8bf1c5e2ea7417ed53a9efef5a7
+      size: 721
+    outs:
+    - path: data/processed/processed_bigmartdata.csv
+      md5: 521b706464f0dac38298b43b885808d9
+      size: 955943
