@@ -29,3 +29,19 @@ stages:
     - path: data/processed/processed_bigmartdata.csv
       md5: 521b706464f0dac38298b43b885808d9
       size: 955943
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/processed/processed_bigmartdata.csv
+      md5: 521b706464f0dac38298b43b885808d9
+      size: 955943
+    - path: src/split_data.py
+      md5: c1de6f904162a27de62b4b892266163e
+      size: 1074
+    outs:
+    - path: data/train_test_data/test_bigmartdata.csv
+      md5: d15b52a0fb0b86dfc21774300a641725
+      size: 191002
+    - path: data/train_test_data/train_bigmartdata.csv
+      md5: ac3cefd3850fdee552e0446adb033b54
+      size: 765150
