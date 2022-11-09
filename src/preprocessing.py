@@ -49,7 +49,7 @@ def missing_imputation(config_path):
         config = read_params(config_path)
         preprocessed_data_path = config["preprocessing"]["processed_data_path"]  
         print("about to complete.....")
-        data.to_csv(preprocessed_data_path,sep=",")     
+        data.to_csv(preprocessed_data_path,sep=",",index=False)     
 
         # print(data.isnull().mean()*100)
 

@@ -26,5 +26,26 @@ stages:
     - data/train_test_data/train_bigmartdata.csv
     - data/train_test_data/test_bigmartdata.csv
 
+  train_and evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - data/train_test_data/train_bigmartdata.csv
+    - data/train_test_data/test_bigmartdata.csv
+    - src/train_and_evaluate.py
+    params:
+    - estimators.RandomForestRegressor.params.n_estimators
+    - estimators.RandomForestRegressor.params.max_depth
+    - estimators.RandomForestRegressor.params.max_leaf_nodes
+    - estimators.RandomForestRegressor.params.min_impurity_decrease
+    - estimators.RandomForestRegressor.params.n_jobs
+    metrics:
+    - report/scores.json:
+        cache: false
+    - report/params.json:
+        cache: false
+    outs:
+    - saved_models/model.joblib
+
+
 
 

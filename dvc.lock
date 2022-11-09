@@ -45,3 +45,32 @@ stages:
     - path: data/train_test_data/train_bigmartdata.csv
       md5: ac3cefd3850fdee552e0446adb033b54
       size: 765150
+  train_and evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/train_test_data/test_bigmartdata.csv
+      md5: d15b52a0fb0b86dfc21774300a641725
+      size: 191002
+    - path: data/train_test_data/train_bigmartdata.csv
+      md5: ac3cefd3850fdee552e0446adb033b54
+      size: 765150
+    - path: src/train_and_evaluate.py
+      md5: 711b32f60a014483a0f808d27eb42946
+      size: 4570
+    params:
+      params.yaml:
+        estimators.RandomForestRegressor.params.max_depth: 7
+        estimators.RandomForestRegressor.params.max_leaf_nodes: None
+        estimators.RandomForestRegressor.params.min_impurity_decrease: 0.0
+        estimators.RandomForestRegressor.params.n_estimators: 100
+        estimators.RandomForestRegressor.params.n_jobs: None
+    outs:
+    - path: report/params.json
+      md5: 9e0945a88ab7772e3706cb0ab4b79f42
+      size: 110
+    - path: report/scores.json
+      md5: 81f7314f707fd594337449b46580d5ed
+      size: 68
+    - path: saved_models/model.joblib
+      md5: be1845f3847d61b6dac8792ef5510c4d
+      size: 1006945

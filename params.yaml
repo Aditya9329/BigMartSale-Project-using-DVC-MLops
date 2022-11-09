@@ -1,6 +1,6 @@
 base:
   random_state: 42
-  target_col: Item_Outlet_Sales
+  target_col: item_outlet_sales
 
 data_source:
   s3_source: data_given/bigmartdata.csv
@@ -17,8 +17,19 @@ split_data:
   test_size : 0.2
 
 estimators:
-  LinearRegression:
+  RandomForestRegressor:
     params:
-      l1_ratio: 0.9
+      n_estimators: 100
+      max_depth: 7
+      max_leaf_nodes: None
+      min_impurity_decrease: 0.0
+      n_jobs: None
+
+
 
 model_dir: saved_models
+
+
+reports:
+  params: report/params.json
+  scores: report/scores.json

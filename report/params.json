@@ -1,0 +1,6 @@
+{
+    "random_state": 42,
+    "max_depth": 7,
+    "min_impurity_decrease": 0.0,
+    "n_estimators": 100
+}
