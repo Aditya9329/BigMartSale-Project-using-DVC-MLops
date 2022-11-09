@@ -19,4 +19,13 @@ to track data by dvc
 ```bash
 dvc add data_given/bigmartdata.csv
 ```
+check to metrics and scores using dvc
+```bash
+dvc metrics show
+```
+to check the metrics differences and scores
+```bash
+dvc metrics diff
+```
+
 
