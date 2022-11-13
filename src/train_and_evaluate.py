@@ -16,6 +16,7 @@ import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import OrdinalEncoder
+from sklearn.metrics import accuracy_score
 
 
 
@@ -79,11 +80,11 @@ def train_and_evaluate(config_path):
     pickle.dump(train_trfd, open('transform', 'wb'))
     test_trfd  = transformer.transform(test_x)
     # print(train_trfd)
-    print("-----------DATA TRANSFORMED----------------")
+    print("--------------DATA TRANSFORMED-------------------")
 
     print(train_trfd)
     print(test_trfd)
-    print("------------START TRAINING MODEL-----------")
+    print("----------------START TRAINING MODEL--------------")
     rf = RandomForestRegressor(max_depth = max_depth,
                                 n_estimators = n_estimators,
                                 # n_jobs = n_jobs,
@@ -92,15 +93,19 @@ def train_and_evaluate(config_path):
 
 
     rf.fit(train_trfd,train_y)
-    print("----------TRANING IS DONE-----------------")
+    print("-----------------TRANING IS DONE------------------")
     y_pred = rf.predict(test_trfd)
     mse = mean_squared_error(test_y , y_pred)
     rmse = np.sqrt(mse)
 
+    print("\n\n");
+
     print("MSE: ",mse)
     print("RMSE: ",rmse)
 
-    
+    print("-------TRAINING ACCURACY & TESTING ACCURACY-------")
+    print("TRAINING SCORE: ",rf.score(train_trfd, train_y))
+    print("TESTING  SCORE: ",rf.score(test_trfd,test_y))
     scores_file = config["reports"]["scores"]
     params_file = config["reports"]["params"]
 
@@ -124,6 +129,7 @@ def train_and_evaluate(config_path):
     os.makedirs(model_dir,exist_ok=True)
     model_path = os.path.join(model_dir,"model.joblib")
     joblib.dump(rf, model_path)
+    print("\n\n")
     print("------------TRAINING STAGE AND EVALUATION STAGE COMPLETED-----------")
 
 

@@ -24,6 +24,7 @@ check to metrics and scores using dvc
 dvc metrics show
 ```
 to check the metrics differences and scores
+
 ```bash
 dvc metrics diff
 ```
