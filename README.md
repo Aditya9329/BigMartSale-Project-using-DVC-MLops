@@ -28,5 +28,20 @@ to check the metrics differences and scores
 ```bash
 dvc metrics diff
 ```
+install django
+
+```bash
+pip install django
+```
+
+create a project directory
+```bash
+django-admin startproject webapp
+```
+create an application inside the project directory
+```bash
+python manage.py startapp application
+```
+
 
 
