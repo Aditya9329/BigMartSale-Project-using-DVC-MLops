@@ -72,12 +72,13 @@ def train_and_evaluate(config_path):
 
     # start pickling a model
     # pickle.dump(transformer, open('transform', 'wb'))------------
-
+    print(train_x.shape)
+    print(train_x)
     # transformer = pickle.load(open('./notebooks/tranformer_model.pkl', 'rb'))
     print("--------TRANSFORMER:- READY----------------")
     # vect  =  pickle.load(open('./vectorizer/vectorize.pickle', 'rb'))
     train_trfd = transformer.fit_transform(train_x)
-    pickle.dump(train_trfd, open('transform', 'wb'))
+    pickle.dump(transformer, open('./column_transformer/transformer_model_.pickle', 'wb'))
     test_trfd  = transformer.transform(test_x)
     # print(train_trfd)
     print("--------------DATA TRANSFORMED-------------------")
