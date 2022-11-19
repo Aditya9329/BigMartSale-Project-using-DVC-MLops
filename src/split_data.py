@@ -17,6 +17,7 @@ def split_and_save(config_path):
     processed_data_path  = config["preprocessing"]["processed_data_path"]
     df = pd.read_csv(processed_data_path,sep=",")
     train,test  = train_test_split(df,test_size = test_size,random_state=random_state)
+    print("splitting done")
     train.to_csv(train_data_path,sep=",",index=False)
     test.to_csv(test_data_path,sep=",",index=False)
     

@@ -59,7 +59,7 @@ def home(request):
         outlet_size,outlet_location_type,outlet_type]
         print(lis)
 
-        transformer = pickle.load(open('../column_transformer/transformer_model_.pickle','rb'))
+        transformer = pickle.load(open('../column_transformer/transformer_final_model_.pickle','rb'))
         print("------------File Loading is Done------------")
 
         # create in such a way so that it can be transformed
@@ -87,11 +87,13 @@ def home(request):
         # df = df.reset_index(drop=True,inplace=True)-
         # value = df.loc[:,:]
         # print("check type",type(df['item_weight'][0]))
-        print(df.to_numpy())
+        # print(df.to_numpy())
         # print(arr)
         # arr1  = arr.reshape(1,-1)
         # print(arr1)
-        op = transformer.transform(df.to_numpy())
+        # arr  = df.to_numpy()
+        op = transformer.transform(df)
+        print("OP down look")
         print(op)
         # result = prediction.predict(data)
         
