@@ -9,6 +9,7 @@ import numpy as np
 import pickle
 import numpy as np
 import pandas as pd
+import joblib
 
 params_path = "../params.yaml"
 
@@ -95,8 +96,15 @@ def home(request):
         op = transformer.transform(df)
         print("OP down look")
         print(op)
+
+        # import trained RandomForest model
+        # prediction.predict(op)
+        model = joblib.load("../saved_models/model.joblib")
+        prediction = model.predict(op)
+        print(prediction)
+        # print(prediction)
         # result = prediction.predict(data)
         
-        # return HttpResponse(result)
+        return render(request,'prediction.html',{"prediction":prediction})
     res = render(request,'index.html')
     return res
